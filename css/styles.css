@@ -1,0 +1,540 @@
+/* ===============================================
+   Portal de Acreditación - Medicina UNA Puno
+   Styles CSS - v1.0
+   =============================================== */
+
+/* Variables de Colores Institucionales */
+:root {
+  --morado-principal: #8B3A8E;
+  --morado-oscuro: #6B2A6E;
+  --amarillo: #F9D71C;
+  --azul: #2B7BB9;
+  --verde-oliva: #848B4F;
+  --blanco: #FFFFFF;
+  --gris-texto: #2C3E50;
+  --gris-claro: #F8F9FA;
+  --intro-bg: #F0F4F8;
+}
+
+/* Reset y configuración base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--gris-texto);
+  background-color: var(--blanco);
+}
+
+/* Header */
+.header {
+  background-color: var(--morado-principal);
+  color: var(--blanco);
+  padding: 20px 0;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header-logo .logo-img {
+  max-height: 80px;
+  width: auto;
+}
+
+.header-text {
+  flex: 1;
+}
+
+.header-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  letter-spacing: 0.5px;
+}
+
+.header-subtitle {
+  font-size: 16px;
+  font-weight: 400;
+  opacity: 0.95;
+}
+
+/* Container Principal */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  min-height: calc(100vh - 240px);
+}
+
+/* Secciones de Contenido */
+.content {
+  display: none;
+  animation: fadeIn 0.3s ease-in;
+}
+
+.content.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Home - Introducción */
+.home-intro {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-title {
+  color: var(--morado-principal);
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.intro-text {
+  background-color: var(--intro-bg);
+  padding: 20px;
+  border-left: 4px solid var(--azul);
+  border-radius: 4px;
+  margin-bottom: 30px;
+  line-height: 1.7;
+}
+
+/* Grid de Navegación */
+.nav-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.nav-btn {
+  background-color: var(--blanco);
+  border: 2px solid var(--morado-principal);
+  border-radius: 12px;
+  padding: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  min-height: 160px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-btn:hover {
+  background-color: var(--amarillo);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.nav-btn:focus {
+  outline: 3px solid var(--azul);
+  outline-offset: 2px;
+}
+
+.nav-icon {
+  font-size: 48px;
+  display: block;
+}
+
+.nav-text {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--gris-texto);
+  text-align: center;
+}
+
+/* Content Header */
+.content-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+/* Botón Volver */
+.btn-back {
+  background-color: var(--morado-oscuro);
+  color: var(--blanco);
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-back:hover {
+  background-color: #5B1A5E;
+  transform: translateX(-3px);
+}
+
+.btn-back:focus {
+  outline: 3px solid var(--azul);
+  outline-offset: 2px;
+}
+
+/* Secciones de Documentos */
+.doc-section {
+  margin-bottom: 40px;
+}
+
+.category-title {
+  color: var(--morado-principal);
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 4px solid var(--morado-principal);
+}
+
+/* Tarjetas de Documentos */
+.doc-item {
+  background-color: #FAFAFA;
+  border-left: 4px solid var(--azul);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+}
+
+.doc-item:hover {
+  background-color: #F0F0F0;
+  transform: translateX(3px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.doc-title {
+  color: var(--gris-texto);
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.doc-description {
+  color: #555;
+  font-size: 14px;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+/* Botones de Descarga */
+.doc-download {
+  display: inline-block;
+  background-color: var(--azul);
+  color: var(--blanco);
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.doc-download:hover {
+  background-color: #1F5A8C;
+  transform: translateY(-2px);
+  box-shadow: 0 3px 8px rgba(43, 123, 185, 0.3);
+}
+
+.doc-download:focus {
+  outline: 3px solid var(--morado-principal);
+  outline-offset: 2px;
+}
+
+/* Sección FAQ */
+.faq-section {
+  margin-top: 40px;
+}
+
+.faq-item {
+  background-color: var(--gris-claro);
+  border-left: 4px solid var(--amarillo);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  background-color: #E9ECEF;
+}
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--gris-texto);
+}
+
+.faq-icon {
+  font-size: 14px;
+  transition: transform 0.3s ease;
+  color: var(--morado-principal);
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(90deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  padding-left: 26px;
+}
+
+.faq-answer p {
+  margin-top: 15px;
+  line-height: 1.7;
+  color: #444;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 500px;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--morado-principal);
+  color: var(--blanco);
+  padding: 30px 0;
+  margin-top: 60px;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.footer-text {
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* ===============================================
+   RESPONSIVE DESIGN
+   =============================================== */
+
+/* Tablet (768px y menor) */
+@media (max-width: 768px) {
+  .header {
+    min-height: 140px;
+  }
+
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .header-title {
+    font-size: 20px;
+  }
+
+  .header-subtitle {
+    font-size: 14px;
+  }
+
+  .header-logo .logo-img {
+    max-height: 60px;
+  }
+
+  .container {
+    padding: 30px 15px;
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
+
+  .nav-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .nav-btn {
+    padding: 25px;
+    min-height: 140px;
+  }
+
+  .nav-icon {
+    font-size: 40px;
+  }
+
+  .nav-text {
+    font-size: 16px;
+  }
+
+  .content-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .category-title {
+    font-size: 22px;
+  }
+
+  .doc-title {
+    font-size: 16px;
+  }
+}
+
+/* Móvil (480px y menor) */
+@media (max-width: 480px) {
+  .header {
+    min-height: 160px;
+    padding: 15px 0;
+  }
+
+  .header-title {
+    font-size: 18px;
+  }
+
+  .header-subtitle {
+    font-size: 13px;
+  }
+
+  .header-logo .logo-img {
+    max-height: 50px;
+  }
+
+  .container {
+    padding: 20px 10px;
+  }
+
+  .section-title {
+    font-size: 24px;
+  }
+
+  .nav-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .nav-btn {
+    padding: 20px;
+    min-height: 120px;
+  }
+
+  .nav-icon {
+    font-size: 36px;
+  }
+
+  .nav-text {
+    font-size: 15px;
+  }
+
+  .btn-back {
+    width: 100%;
+    text-align: center;
+  }
+
+  .category-title {
+    font-size: 20px;
+  }
+
+  .doc-item {
+    padding: 15px;
+  }
+
+  .doc-title {
+    font-size: 15px;
+  }
+
+  .doc-description {
+    font-size: 13px;
+  }
+
+  .doc-download {
+    display: block;
+    text-align: center;
+    padding: 12px 15px;
+  }
+
+  .faq-question {
+    font-size: 14px;
+  }
+
+  .faq-answer p {
+    font-size: 14px;
+  }
+
+  .footer-text {
+    font-size: 12px;
+  }
+}
+
+/* Accesibilidad - Focus States */
+*:focus {
+  outline: 2px solid var(--azul);
+  outline-offset: 2px;
+}
+
+button:focus,
+a:focus {
+  outline: 3px solid var(--azul);
+  outline-offset: 2px;
+}
+
+/* Print Styles */
+@media print {
+  .header,
+  .footer,
+  .btn-back,
+  .nav-grid {
+    display: none;
+  }
+
+  body {
+    font-size: 12pt;
+    color: #000;
+  }
+
+  .content {
+    display: block !important;
+  }
+
+  .doc-item {
+    page-break-inside: avoid;
+  }
+}
